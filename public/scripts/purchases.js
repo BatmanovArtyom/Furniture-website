@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loadLocalStorageData();
 
 
-    loadServerData();
+    // loadServerData();
 
     document.getElementById("openModal").addEventListener("click", () => {
         currentItemName = document.getElementById("itemName").value.trim();
@@ -131,4 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const savedData = JSON.parse(localStorage.getItem("shoppingTableData")) || [];
         savedData.forEach(addTableRow);
     }
+
+
+    const menuItems = document.querySelectorAll('.navigation a');
+    console.log(menuItems);
+    const currentPath = document.location.pathname.split("/").pop();
+    console.log(currentPath);
+    menuItems.forEach((item) => {
+        if (item.getAttribute("href") === currentPath) {
+            item.classList.add("active");
+        }
+        else {
+            item.classList.remove("active");
+        }
+    });
 });

@@ -53,7 +53,7 @@ form label {
     margin: 10px 0 5px;
 }
 
-form input, form select, form button {
+form input, form select {
     margin-bottom: 10px;
     padding: 8px;
     width: 80%;
@@ -284,4 +284,21 @@ footer button:hover {
 .active {
     color: lavender;
     font-weight: bold;
+}
+
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.buttonAuth {
+    background: #555555;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 60px;
+    margin-bottom: 0;
+    margin-top: 21px;
 }
