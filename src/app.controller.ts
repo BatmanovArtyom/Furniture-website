@@ -3,6 +3,12 @@ import { Request, Response } from 'express';
 
 @Controller()
 export class AppController {
+  @Get('/')
+  @Redirect('/index')
+  redirectToIndex() {
+    return { url: '/index' };
+  }
+
   @Get('/index')
   @Render('index')
   getIndexPage(@Req() req: Request) {
