@@ -1,0 +1,12 @@
+{{#if isAuthenticated}}
+  <div class="auth-section">
+    <span>Добро пожаловать, {{user.name}} {{user.surname}}!</span>
+    <form action="/logout" method="POST">
+      <button class="buttonAuth" type="submit">Выйти</button>
+    </form>
+  </div>
+{{else}}
+  <form action="/login" method="POST">
+    <button class="buttonAuth" type="submit">Войти</button>
+  </form>
+{{/if}}

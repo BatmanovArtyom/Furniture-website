@@ -1,0 +1,13 @@
+<main class="product-catalog">
+  <h1 class="catalog-title">Каталог товаров</h1>
+  <div class="product-grid">
+    {{#each products}}
+      {{>product_card
+        altText=this.altText
+        title=this.title
+        description=this.description
+        price=this.price
+      }}
+    {{/each}}
+  </div>
+</main>

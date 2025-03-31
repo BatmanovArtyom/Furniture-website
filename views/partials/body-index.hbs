@@ -1,0 +1,25 @@
+<div class="main-center">
+  <div class="main-text">
+    <div class="header-title">
+      <h2>Идеальный дом начинается с мебели</h2>
+    </div>
+    <div class="header-subtitle">
+      <a href="/catalog">перейти в каталог</a>
+    </div>
+  </div>
+</div>
+<section class="second-main">
+  <div class="o-nas-title" id="onas">
+    <h1>Коротко о нас</h1>
+    <div class="list-o-nas">
+      <dl>
+        {{#each features}}
+          <dt>
+            <img src="/static/img/{{this.icon}}" alt="{{this.altText}}">
+            <div class="img1">{{this.text}}</div>
+          </dt>
+        {{/each}}
+      </dl>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+<main>
+  <h1>Добавление товара в список покупок</h1>
+  <form id="addItemForm">
+    <label for="itemName">Что купить:</label>
+    <input
+      type="text"
+      id="itemName"
+      name="itemName"
+      placeholder="Например: Стул"
+      required
+    >
+    <button type="button" id="openModal">Добавить товар</button>
+  </form>
+
+  <div id="itemModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Параметры товара</h2>
+      <form id="itemDetailsForm">
+        <label for="itemQuantity">Количество:</label>
+        <input
+          type="number"
+          id="itemQuantity"
+          name="itemQuantity"
+          min="1"
+          value="1"
+          required
+        >
+
+        <label for="itemColor">Цвет:</label>
+        <input
+          type="text"
+          id="itemColor"
+          name="itemColor"
+          placeholder="Например: Белый"
+          required
+        >
+
+        <label for="itemLocation">Расположение:</label>
+        <select id="itemLocation" name="itemLocation" required>
+          <option value="Ванная">Ванная</option>
+          <option value="Гостиная">Гостиная</option>
+          <option value="Прихожая">Прихожая</option>
+          <option value="Кухня">Кухня</option>
+          <option value="Спальня">Спальня</option>
+        </select>
+
+        <div class="modal-buttons">
+          <button type="button" id="addItem">Добавить</button>
+          <button type="button" id="closeModal">Отмена</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <h2>Список покупок:</h2>
+  <table id="shoppingTable" class="furniture-table">
+    <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Количество</th>
+      <th>Цвет</th>
+      <th>Расположение</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each items}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.quantity}}</td>
+        <td>{{this.color}}</td>
+        <td>{{this.location}}</td>
+      </tr>
+    {{else}}
+      <tr>
+        <td colspan="4" class="empty-table">Список покупок пуст.</td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+  <div id="preloader" class="preloader hidden">
+    <div class="loader"></div>
+    <p>Загрузка...</p>
+  </div>
+  <div id="errorMessage" style="color: red; font-size: 14px; display: none;">
+    <p>⚠ Что-то пошло не так!</p>
+  </div>
+</main>
